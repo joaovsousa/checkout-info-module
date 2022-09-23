@@ -1,0 +1,40 @@
+<div id="product-information"
+     class="items-wrapper"
+     data-role="content">
+    <table class="items-table">
+        <thead>
+        <tr>
+            <th>
+                <!-- ko i18n: 'Image'--><!-- /ko -->
+            </th>
+            <th>
+                <!-- ko i18n: 'Name'--><!-- /ko -->
+            </th>
+            <th>
+                <!-- ko i18n: 'Qty'--><!-- /ko -->
+            </th>
+            <th>
+                <!-- ko i18n: 'Price'--><!-- /ko -->
+            </th>
+        </tr>
+        </thead>
+        <tbody data-bind="foreach: cart().items">
+        <tr>
+            <td class="column-img">
+                <img class="product-image"
+                     data-bind="attr: {'src': $data.product_image.src, 'alt': $t('Product') + ' ' + $data.product_name}"/>
+            </td>
+            <td class="column-name">
+                <span class="product-name" data-bind="text: $data.product_name"></span>
+            </td>
+            <td class="column-qty">
+                <span class="product-qty" data-bind="text: $data.qty"></span>
+            </td>
+            <td class="column-price">
+                <span class="product-price"
+                      data-bind="text: $parent.getFormattedPrice($data.product_price_value)"></span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

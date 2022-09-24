@@ -1,13 +1,12 @@
 <!--Use 'stepCode' as id attribute-->
-<li data-bind="fadeVisible: isVisible, attr: { id: stepCode }">
+<li data-bind="fadeVisible: isVisible, attr: { id: stepCode, class: 'content-' + stepCode }">
     <div class="step-title" data-bind="i18n: stepTitle" data-role="title"></div>
     <div id="checkout-step-title"
          class="step-content"
          data-role="content">
         <p><!-- ko i18n: 'The customer is'--><!-- /ko --> <span data-bind="if: !isLoggedIn">not</span> Logged-in</p>
         <!--  ko foreach: elems() -->
-            <!--ko template: getTemplate()-->
-            <!-- /ko-->
+            <!--ko template: getTemplate()--><!-- /ko-->
         <!-- /ko-->
         <form data-bind="submit: navigateToNextStep" novalidate="novalidate">
             <div class="actions-toolbar">
